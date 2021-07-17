@@ -28,6 +28,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
+        <div id="movieflix-container">
         <?php
           // Connect to the database
           $servername = 'localhost';
@@ -74,17 +75,16 @@
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo $row['genre']; ?></td>
                 <td><?php echo $row['director']; ?></td>
-                <td><i class="fas fa-edit editRecord"></i></td>
-                <td><i class="fas fa-trash-alt deleteRecord"></i></td>
+                <td><a class="editRecord"><i class="fas fa-edit"></i></a></td>
+                <td><a class="deleteRecord"><i class="fas fa-trash-alt"></i></a></td>
               </tr>
             <?php endwhile; ?>
           </tbody>
           </table>
-          
-        
+        </div>
       </div>
     </div>
   </div>
-  <script type="text/javascript" href="js/script.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
-.editRecord:hover,
-.deleteRecord:hover {
+a {
+  color: #212529;
+}
+#editRecord:hover,
+#deleteRecord:hover {
   cursor: pointer;
 }
