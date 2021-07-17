@@ -1,0 +1,4 @@
+.editRecord:hover,
+.deleteRecord:hover {
+  cursor: pointer;
+}
