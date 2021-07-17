@@ -75,16 +75,93 @@
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo $row['genre']; ?></td>
                 <td><?php echo $row['director']; ?></td>
-                <td><a class="editRecord"><i class="fas fa-edit"></i></a></td>
+                <td><a class="editRecord" data-bs-toggle="modal" data-bs-target="#editMovieModal"><i class="fas fa-edit"></i></a></td>
                 <td><a class="deleteRecord"><i class="fas fa-trash-alt"></i></a></td>
               </tr>
             <?php endwhile; ?>
           </tbody>
           </table>
+        </div><!-- End of movieflix-container -->
+
+        <!-- Modal - Edit Movie -->
+        <div class="modal fade" id="editMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editMovieLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editMovieLabel">Edit A Movie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- UPDATE -->
+                <form action="includes/update.php" method="POST" id="update-form">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="updateId" aria-describedby="updateId" placeholder="Enter movie id" name="update-id" />
+                    <label for="floatingInput">Enter Record ID</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="updateTitle" aria-describedby="updateTitle" placeholder="Enter movie title" name="update-title" />
+                    <label for="floatingInput">Enter movie title</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="updateGenre" aria-describedby="updateGenre" placeholder="Enter movie genre" name="update-genre" />
+                    <label for="floatingInput">Enter movie genre</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="updateDirector" aria-describedby="updateDirector" placeholder="Enter movie director" name="update-director" />
+                    <label for="floatingInput">Enter movie director</label>
+                  </div>
+                  <!-- <button type="submit" class="btn btn-primary" name="update-button">Save</button> -->
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" name="update-button" id="saveUpdateBtn">Save</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+
+
+        <div id="addMovie-container">
+          <button class="btn btn-primary" id="addMovie" data-bs-toggle="modal" data-bs-target="#addMovieModal">Add a movie</button>
+          <!-- Modal - Add Movie -->
+          <div class="modal fade" id="addMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addMovieLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="addMovieLabel">Add A Movie</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- CREATE -->
+                  <form action="includes/create.php" method="POST" id="create-form">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="createTitle" aria-describedby="createTitle" placeholder="Enter movie title" name="create-title" />
+                      <label for="floatingInput">Enter movie title</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="createGenre" aria-describedby="createGenre" placeholder="Enter movie genre" name="create-genre" />
+                      <label for="floatingInput">Enter movie genre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="createDirector" aria-describedby="createDirector" placeholder="Enter movie director" name="create-director" />
+                      <label for="floatingInput">Enter movie director</label>
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary" name="create-button" id="saveCreateBtn">Save</button> -->
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" name="create-button" id="saveCreateBtn">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- End of addMovie-container -->
+      </div><!-- End of col -->
+    </div><!-- End of row -->
+  </div><!-- End of container -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
