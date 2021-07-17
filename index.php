@@ -28,6 +28,59 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
+        <?php
+          // Connect to the database
+          $servername = 'localhost';
+          $username = 'movieflix';
+          $password = 'movieflix123';
+          $databasename = 'movieflix_db';
+
+          $connection = mysqli_connect($servername, $username, $password, $databasename);
+        
+          if(!$connection) {
+            die('Connection failed: '.mysqli_connect_error());
+          } else {
+            echo "Connection successful!<br /><br />";
+          }
+
+          $sql = "SELECT * FROM movieflix_table";
+
+          // Retrieve the result object
+          $result = mysqli_query($connection, $sql);
+
+          // Get the number of rows
+          $number_of_rows = mysqli_num_rows($result);
+
+          if($number_of_rows > 0) {
+            echo "<table class='table'>
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Director</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+            ";
+          }
+          ?>
+
+          <tbody>
+            <?php while($row = $result->fetch_assoc()) : ?>
+              <tr>
+                <td><?php echo $row['id']; ?></td>
+                <td><?php echo $row['title']; ?></td>
+                <td><?php echo $row['genre']; ?></td>
+                <td><?php echo $row['director']; ?></td>
+                <td><i class="fas fa-edit editRecord"></i></td>
+                <td><i class="fas fa-trash-alt deleteRecord"></i></td>
+              </tr>
+            <?php endwhile; ?>
+          </tbody>
+          </table>
+          
         
       </div>
     </div>
