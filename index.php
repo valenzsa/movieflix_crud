@@ -11,6 +11,9 @@
   <title>Movieflix CRUD</title>
 </head>
 <body>
+
+  <?php require_once('includes/create.php'); ?>
+
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
