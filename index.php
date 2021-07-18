@@ -83,7 +83,7 @@
                 <td><?php echo $row['genre']; ?></td>
                 <td><?php echo $row['director']; ?></td>
                 <td><a class="editRecord" data-bs-toggle="modal" data-bs-target="#editMovieModal"><i class="fas fa-edit"></i></a></td>
-                <td><a class="deleteRecord"><i class="fas fa-trash-alt"></i></a></td>
+                <td><a class="deleteRecord" data-bs-toggle="modal" data-bs-target="#deleteMovieModal"><i class="fas fa-trash-alt"></i></a></td>
               </tr>
             <?php endwhile; ?>
           </tbody>
@@ -128,6 +128,32 @@
           </div>
         </div> -->
 
+        <!-- Modal - Delete Movie -->
+        <div class="modal fade" id="deleteMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteMovieLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteMovieLabel">Delete A Movie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="includes/update.php" method="POST" id="update-form">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="deleteId" aria-describedby="deleteId" placeholder="Enter movie id" name="delete-id" value="<?php echo $row['id']; ?>" />
+                    <label for="floatingInput">Enter Record ID</label>
+                  </div>
+                  
+                  <!-- <button type="submit" class="btn btn-primary" name="update-button">Save</button> -->
+                  <input type="submit" class="btn btn-primary" name="delete-button" id="saveDeleteBtn" data-bs-dismiss="modal" aria-label="Close" value="Save" />
+                </form>
+              </div>
+              <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" name="update-button" id="saveUpdateBtn">Save</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
 
         <div id="addMovie-container">
           <button class="btn btn-primary" id="addMovie" data-bs-toggle="modal" data-bs-target="#addMovieModal">Add a movie</button>
@@ -165,23 +191,6 @@
             </div>
           </div>
         </div><!-- End of addMovie-container -->
-
-        <!-- CREATE -->
-        <!-- <form action="includes/create.php" method="POST" id="create-form">
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="createTitle" aria-describedby="createTitle" placeholder="Enter movie title" name="create-title" />
-            <label for="floatingInput">Enter movie title</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="createGenre" aria-describedby="createGenre" placeholder="Enter movie genre" name="create-genre" />
-            <label for="floatingInput">Enter movie genre</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="createDirector" aria-describedby="createDirector" placeholder="Enter movie director" name="create-director" />
-            <label for="floatingInput">Enter movie director</label>
-          </div>
-          <button type="submit" class="btn btn-primary" name="create-button" id="saveCreateBtn" data-bs-dismiss="modal" aria-label="Close">Save</button>
-        </form> -->
 
       </div><!-- End of col -->
     </div><!-- End of row -->
