@@ -8,10 +8,10 @@ movieflixContainer.addEventListener('click', removeRecord);
 
 // addMovie
 
-function addMovie(e) {
-  console.log(e.target);
-  e.preventDefault();
-}
+// function addMovie(e) {
+//   console.log(e.target);
+//   e.preventDefault();
+// }
 
 // editRecord
 function editRecord(e) {

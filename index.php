@@ -87,7 +87,7 @@
         </div><!-- End of movieflix-container -->
 
         <!-- Modal - Edit Movie -->
-        <div class="modal fade" id="editMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editMovieLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="editMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editMovieLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -95,7 +95,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <!-- UPDATE -->
+                -- UPDATE --
                 <form action="includes/update.php" method="POST" id="update-form">
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="updateId" aria-describedby="updateId" placeholder="Enter movie id" name="update-id" />
@@ -113,7 +113,7 @@
                     <input type="text" class="form-control" id="updateDirector" aria-describedby="updateDirector" placeholder="Enter movie director" name="update-director" />
                     <label for="floatingInput">Enter movie director</label>
                   </div>
-                  <!-- <button type="submit" class="btn btn-primary" name="update-button">Save</button> -->
+                  <button type="submit" class="btn btn-primary" name="update-button">Save</button>
                 </form>
               </div>
               <div class="modal-footer">
@@ -122,7 +122,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
         <div id="addMovie-container">
@@ -150,17 +150,35 @@
                       <input type="text" class="form-control" id="createDirector" aria-describedby="createDirector" placeholder="Enter movie director" name="create-director" />
                       <label for="floatingInput">Enter movie director</label>
                     </div>
-                    <!-- <button type="submit" class="btn btn-primary" name="create-button" id="saveCreateBtn">Save</button> -->
+                    <input type="submit" class="btn btn-primary" name="create-button" id="saveCreateBtn" data-bs-dismiss="modal" aria-label="Close" value="Save" />
                   </form>
                 </div>
-                <div class="modal-footer">
+                <!-- <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" name="create-button" id="saveCreateBtn">Save</button>
-                </div>
+                  <button type="button" class="btn btn-primary" name="create-button" id="saveCreateBtn" data-bs-dismiss="modal">Save</button>
+                </div> -->
               </div>
             </div>
           </div>
         </div><!-- End of addMovie-container -->
+
+        <!-- CREATE -->
+        <!-- <form action="includes/create.php" method="POST" id="create-form">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="createTitle" aria-describedby="createTitle" placeholder="Enter movie title" name="create-title" />
+            <label for="floatingInput">Enter movie title</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="createGenre" aria-describedby="createGenre" placeholder="Enter movie genre" name="create-genre" />
+            <label for="floatingInput">Enter movie genre</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="createDirector" aria-describedby="createDirector" placeholder="Enter movie director" name="create-director" />
+            <label for="floatingInput">Enter movie director</label>
+          </div>
+          <button type="submit" class="btn btn-primary" name="create-button" id="saveCreateBtn" data-bs-dismiss="modal" aria-label="Close">Save</button>
+        </form> -->
+
       </div><!-- End of col -->
     </div><!-- End of row -->
   </div><!-- End of container -->
