@@ -18,6 +18,10 @@
     <div class="row">
       <div class="col-lg-12">
         <h1>Movieflix CRUD</h1>
+        <p>
+          <strong>Description:</strong><br />
+          This is a CRUD application where the user can create, read, update and delete data.
+        </p>
         <p>Technologies used:<br />
           <ul>
             <li>HTML</li>
