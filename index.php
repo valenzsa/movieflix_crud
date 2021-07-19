@@ -20,7 +20,7 @@
         <h1>Movieflix CRUD</h1>
         <p>
           <strong>Description:</strong><br />
-          This is a CRUD application where the user can create, read, update and delete data.
+          This is a simple CRUD application (WIP) where the user can create, read, update and delete data.
         </p>
         <p>Technologies used:<br />
           <ul>
@@ -47,11 +47,12 @@
         
           if(!$connection) {
             die('Connection failed: '.mysqli_connect_error());
-          } else {
-            echo "Connection successful!<br /><br />";
           }
+          // } else {
+          //   echo "Connection successful!<br /><br />";
+          // }
 
-          $sql = "SELECT * FROM movieflix_table";
+          $sql = "SELECT * FROM movieflix_table ORDER BY id ASC";
 
           // Retrieve the result object
           $result = mysqli_query($connection, $sql);
@@ -91,7 +92,7 @@
         </div><!-- End of movieflix-container -->
 
         <!-- Modal - Edit Movie -->
-        <!-- <div class="modal fade" id="editMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editMovieLabel" aria-hidden="true">
+        <div class="modal fade" id="editMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editMovieLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -99,7 +100,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                -- UPDATE --
+                <!-- UPDATE -->
                 <form action="includes/update.php" method="POST" id="update-form">
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="updateId" aria-describedby="updateId" placeholder="Enter movie id" name="update-id" />
@@ -117,16 +118,17 @@
                     <input type="text" class="form-control" id="updateDirector" aria-describedby="updateDirector" placeholder="Enter movie director" name="update-director" />
                     <label for="floatingInput">Enter movie director</label>
                   </div>
-                  <button type="submit" class="btn btn-primary" name="update-button">Save</button>
+                  <!-- <button type="submit" class="btn btn-primary" name="update-button">Save</button> -->
+                  <input type="submit" class="btn btn-primary" name="edit-button" id="saveEditBtn" data-bs-dismiss="modal" aria-label="Close" value="Save" />
                 </form>
               </div>
-              <div class="modal-footer">
+              <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" name="update-button" id="saveUpdateBtn">Save</button>
-              </div>
+              </div> -->
             </div>
           </div>
-        </div> -->
+        </div>
 
         <!-- Modal - Delete Movie -->
         <div class="modal fade" id="deleteMovieModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteMovieLabel" aria-hidden="true">
@@ -137,9 +139,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form action="includes/update.php" method="POST" id="update-form">
+                <form action="includes/delete.php" method="POST" id="delete-form">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="deleteId" aria-describedby="deleteId" placeholder="Enter movie id" name="delete-id" value="<?php echo $row['id']; ?>" />
+                    <input type="text" class="form-control" id="deleteId" aria-describedby="deleteId" placeholder="Enter movie id" name="delete-id" />
                     <label for="floatingInput">Enter Record ID</label>
                   </div>
                   
